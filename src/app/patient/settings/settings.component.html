@@ -1,0 +1,60 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="'Settings'" [items]="[]" [active_item]="'Settings'"></app-breadcrumb>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h2>
+          <strong>Account</strong> Settings</h2>
+      </div>
+      <div class="body">
+        <form class="m-4" [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+              <mat-form-field class="example-full-width mb-3" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstname" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+              <mat-form-field class="example-full-width mb-3" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastname" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+              <mat-form-field class="example-full-width mb-3" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+              <mat-form-field class="example-full-width mb-3" appearance="outline">
+                <mat-label>Enter a new password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                  <a href="#" onClick="return false;" matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon class="material-icons-two-tone color-icon m-3" matSuffix>
+                      {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </a>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+              <button mat-raised-button color="primary" type="submit">Save Changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
